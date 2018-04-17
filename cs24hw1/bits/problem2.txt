@@ -1,5 +1,6 @@
 Expression:  n = n & (n - 1)
 ----------------------------
 
-
-
+*The expression removes the rightmost "1" from the binary representation of n
+*Subtracting 1 from a number flips the rightmost 1 to 0 and flips all following 0s to a 1. Therefore the bitwise AND (&) operation will preserve the number until before the 1 and set the following digits to 0. This is equivalent to flipping the rightmost 1 to a 0.
+* The naive implementation in Part 1 requires us to perform a masking operation for every digit in the binary representation of n (log_2 (n) number of & operations) regardless of the number of one bits in n. The faster solution only requires as many masking operations as the number of one bits in n, thereby being a potentially faster solution when n has less than log_2 (n) number of one bits.

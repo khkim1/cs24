@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-int count_onebits(unsigned int n);
+int faster_onebits(unsigned int n);
 
 
 int main(int argc, char **argv) {
@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     for (i = 1; i < argc; i++) {
         res = sscanf(argv[i], "%u", &n);
         if (res == 1)
-            printf("Input:  %u\tOne-bits:  %u\n\n", n, count_onebits(n));
+            printf("Input:  %u\tOne-bits:  %u\n\n", n, faster_onebits(n));
         else
             printf("Unparseable input \"%s\".  Skipping.\n\n", argv[i]);
     }
@@ -27,23 +27,20 @@ int main(int argc, char **argv) {
     return 0;
 }
 
+
 /*
- * Given an unsigned integer n, this function returns the number of bits in n
- * that are 1.
+ * Given an unsigned integer n, this function returns the nubmer of bits in n
+ * that are 1, without the use of shifts and bit-masks
  */
-int count_onebits(unsigned int n) {
+int faster_onebits(unsigned int n) {
     int num_one_bits = 0;
 
-    /* Loop across the bit form of n */
     while (n > 0) {
-        /* Check if the least significant bit is 1 */
-        if ((n & 1) == 1)
-            num_one_bits++;
+        num_one_bits++;
 
-        /* Shift right by 1 */
-        n = n >> 1;
+        /* Remove the right most '1' from the bit representation of n */
+        n = n & (n - 1);
     }
 
     return num_one_bits;
 }
-

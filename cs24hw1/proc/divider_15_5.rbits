@@ -1,0 +1,6 @@
+000F    # Dividend: 15
+0005    # Divisor: 5
+8000    # Constant mask to check sign
+ffff
+0001    # Constant: 1
+ffff

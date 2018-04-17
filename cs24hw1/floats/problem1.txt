@@ -1,5 +1,10 @@
 CS:APP3e Practice Problem 2.46, pp.111-112:
 -------------------------------------------
 
+A. 0.00...00[1100] where the 00..00 represents twenty three 0s and [1100] is repeated indefinitely.
+B. The dominating factors in the conversion sum are 2^-24 and 2^-25. Summing these two numbers yields approximately 8.94 * 10^-8. (Summing the first six terms yields 9.53 * 10^-8)
+C. 100 hours equates to 100 * 3600 * 10 counts by the system. Thus, the error is 100 * 3600  * 10 * (0.1 - x) which is approximately 0.343 seconds.
+D. 2000 * 0.343 is approximately 686 meters.
+
 
 

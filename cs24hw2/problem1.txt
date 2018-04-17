@@ -1,0 +1,9 @@
+What does the assembly code do?
+-------------------------------
+movq 16(%rbp), %rax => Retrieves memory value x = M[16 + %rbp] into rax
+imulq $3, %rax => Stores 3x in rax
+addq $12, %rax => Stores 3x + 12 in rax
+imulq 16(%rbp), %rax => Stores x(3x + 12) in rax
+subq $17, %rax => Stores 3x^2 + 12x - 17 in rax
+
+

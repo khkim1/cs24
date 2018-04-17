@@ -1,0 +1,4 @@
+
+
+The program while loop continues to execute until the maximum execute time is reached. This is because the value of the variable "remainder" continues to be 0, since divisor = 0 is being subtracted from it at each loop iteration. Hence, the loop termination condition "remainder < 0" is never achieved.
+

@@ -1,11 +1,13 @@
 Part A:
 -------
-
+* The results are different because floating point numbers are represented in a computer with finite precision (more precisely, a fixed width significand), and the lower bits of long numbers are truncated (most often with rounding). Thus addition is not associative with floating point numbers and the result of summing multiple numbers can depend on the order if intermediate results are rounded up.
+* Sum computed in increasing magnitude is most accurate since the intermediate sums are monotic increasing, thus increasing the probability of smaller numbers affecting the total sum since they will accumulate in the beginnning. In the case of decreasing sum, the small numbers added later will most likely not change the sum at all due to the intermediate sum already being very large. Similarly the increasing magnitude method has a higher probability of not rounding off numbers than a random order.
+* Inputs with vast jumps in orders of magnitude between the numbers would cause even the increasing magnitude method to exhibit large errors. For example, if there is a sudden jump in magnitude from 0.00001 to 100000000, the former smaller number will most likely be ignored. Furthermore, simply having a vergy large data set of similar sized inputs would also cause large errors since the intermediate sums will quickly compound to be much larger than each individual data point.
 
 
 Part B:
 -------
-
+Pairwise sum approach allows all the involved additions to be between similar numbers of similar orders of magnitude since it sums two intermediate sums, unlike the naive approaches that add a single data point to an intermediate sum.
 
 
 

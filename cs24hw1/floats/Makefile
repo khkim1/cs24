@@ -11,7 +11,7 @@ CC=gcc
 # Report all warnings, and report them as errors.  Warnings should *always*
 # be fixed.
 CFLAGS = -Wall -Werror
-CFLAGS += -Wno-error=unused-but-set-variable
+CFLAGS += -Wno-error=unused-const-variable
 
 
 #=============================================================================#

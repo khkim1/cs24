@@ -52,10 +52,69 @@ void alu_eval(ALU *alu) {
 
     result = 0;
 
-    /*======================================*/
-    /* TODO:  Implement the ALU logic here. */
-    /*======================================*/
+    switch (aluop) {
+
+        /* Addition */
+        case ALUOP_ADD:
+            result = A + B;
+            break;
+
+        /* Bitwise inversion */
+        case ALUOP_INV:
+            result = ~A;
+            break;
+
+        /* Subtraction */
+        case ALUOP_SUB:
+            result = A - B;
+            break;
+
+        /* Bitwise excluse-or */
+        case ALUOP_XOR:
+            result = A ^ B;
+            break;
+
+        /* Bitwise OR */
+        case ALUOP_OR:
+            result = A | B;
+            break;
+
+        /* Increment by 1 */
+        case ALUOP_INCR:
+            result = A + 1;
+            break;
+
+        /* Bitwise AND */
+        case ALUOP_AND:
+            result = A & B;
+            break;
+
+        /* Arithmetic shift-right */
+        case ALUOP_SRA:
+            result = (uint32_t) ((int32_t) A >> 1);
+            break;
+
+        /* Logical shift-right */
+        case ALUOP_SRL:
+            result = A >> 1;
+            break;
+
+        /* Arithmetic shift-left */
+        case ALUOP_SLA:
+            result = (uint32_t) ((int32_t) A << 1);
+            break;
+
+        /* Logical shift-left */
+        case ALUOP_SLL:
+            result = A << 1;
+            break;
+
+        /* Return 0 for unrecognized op codes. */
+        default:
+            result = 0;
+            break;
+
+    }
 
     pin_set(alu->out, result);
 }
-

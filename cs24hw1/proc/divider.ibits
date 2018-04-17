@@ -1,0 +1,9 @@
+0bb6  #   R6<-R6-R6  -- quotient = 0
+0237  #   R7<-R0+R6  -- remainder = dividend
+0bcf  # LOOP_TOP (2): R7<-R7-R1  -- remainder -= divisor
+23d3  #   R3<-R7&R2  -- remainder<0
+28c7  #   BNZ R3 7   -- if (remainder<0) branch LOOP_END(7)
+03a6  #   R6<-R6+R4  -- quotient++
+2902  #   BRZ R4 2   -- if (1) branch LOOP_TOP(2)
+03cf  # LOOP_END (7): R7<-R7+R1  -- remainder += divisor
+3c00  #   done       -- done, exit leaving quotient in R6 and remainder in R7
